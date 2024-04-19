@@ -23,13 +23,13 @@ alembic upgrade head
 * Initialization: Creates a hash map with an initial size of 8.
 * Length: Returns the number of key-value pairs in the hash map.
 * Get: Retrieves the value associated with a given key.
-* Set: Associates a value with a given key.
+* Put: Associates a value with a given key.
 
 ## Implementation Details
 * __init__(): Initializes the hash map with a load factor of 0 and an initial capacity of 8.
 * __len__(): Returns the current number of key-value pairs in the hash map.
-* __getitem__(key: Hashable) -> Optional[Any]: Retrieves the value associated with the specified key.
-* __setitem__(key: Hashable, value: Any) -> None: Associates the specified value with the specified key in the hash map.
+* get(key: Hashable) -> Optional[Any]: Retrieves the value associated with the specified key.
+* put(key: Hashable, value: Any) -> None: Associates the specified value with the specified key in the hash map.
 
 ## Key Features
 * Efficient hash table resizing: The hash map automatically resizes itself to maintain a load factor of less than 75%.
