@@ -46,10 +46,9 @@ class UserService:
             raise ValueError(f"user_id {user_id} must be biggest then 0")
 
         stmt = select(User).filter_by(id=user_id)
-        result = await session.execute(stmt)
-        user = result.first()
+        user = await session.scalar(stmt)
 
-        return UserDTO(**user[0].__dict__) if user else None
+        return UserDTO(**user.__dict__) if user else None
 
     @_with_session
     async def add(

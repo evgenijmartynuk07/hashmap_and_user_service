@@ -9,13 +9,13 @@ class HashMap:
     def __len__(self) -> int:
         return self.load
 
-    def __getitem__(self, key: Hashable) -> Optional[Any]:
+    def get(self, key: Hashable) -> Optional[Any]:
         for index in self.items:
             if index is not None and key == index[0]:  # try to find key
                 return index[-1]  # return values
         raise KeyError
 
-    def __setitem__(self, key: Hashable, value: Any) -> None:
+    def put(self, key: Hashable, value: Any) -> None:
         if not isinstance(key, Hashable):
             raise TypeError("Key must be hashable")
 
